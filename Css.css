@@ -1,0 +1,247 @@
+:root {
+    color-scheme: light;
+    background-color: #f7f1e8;
+    color: #1d1b18;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #f7f1e8;
+}
+
+body {
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(0, 1100px) minmax(2rem, 1fr);
+    background-color: #f7f1e8;
+}
+
+body > * {
+    grid-column: 2;
+}
+
+header {
+    padding: 2rem 0 1.5rem;
+}
+
+.encabezado-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.perfil-autor {
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.perfil-autor p {
+    margin: 0;
+}
+
+.cambio-idioma {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.cambio-idioma button {
+    background: transparent;
+    border: 1px solid #cbc1b4;
+    color: #1d1b18;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    font-size: 2rem;
+    color: #1d1b18;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* nav li:nth-child(1) a { font-size: 1.25rem; }
+nav li:nth-child(2) a { font-size: 1.1rem; }
+nav li:nth-child(3) a { font-size: 1rem; }
+nav li:nth-child(4) a { font-size: 0.95rem; } */
+
+.hero {
+    padding: 0 0 2rem;
+    border-bottom: 1px solid rgba(29, 27, 24, 0.15);
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: start;
+}
+
+.hero-text {
+    max-width: 42rem;
+}
+
+.hero h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(4rem, 7vw, 8rem);
+    margin: 0;
+    line-height: 0.95;
+    text-align: left;
+}
+
+.hero p {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 2.2rem;
+    margin: 1.25rem 0 0;
+    color: gray;
+}
+
+.hero-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content:flex-start;
+    gap: 0.5rem;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.0;
+    color: #4a433c;
+}
+
+.hero-meta p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.hero p em {
+    font-style: italic;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    margin-top: 2rem;
+    padding: 1rem 0 0;
+}
+
+.hero + .contenido-principal {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    gap: 2rem;
+    align-items: start;
+}
+
+.visualizacion {
+    min-height: 28rem;
+}
+
+#grafico-tecnico {
+    width: 100%;
+    min-height: 28rem;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(29, 27, 24, 0.1);
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+}
+
+aside.sidebar {
+    border-left: 1px solid rgba(29, 27, 24, 0.12);
+    padding-left: 2rem;
+}
+
+aside.sidebar .sobre-mi,
+aside.sidebar .datos-personales {
+    margin: 0 0 2rem;
+}
+
+aside.sidebar h2,
+aside.sidebar h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+aside.sidebar p {
+    margin: 0 0 1rem;
+    line-height: 1.85;
+    text-align: left;
+}
+
+.datos-personales dl {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.datos-personales dt {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.datos-personales dd {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: 1rem minmax(0, 1fr) 1rem;
+    }
+
+    header {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .hero {
+        margin-bottom: 1.5rem;
+    }
+
+    .hero + .contenido-principal {
+        grid-template-columns: 1fr;
+    }
+
+    aside.sidebar {
+        border-left: none;
+        padding-left: 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(29, 27, 24, 0.12);
+    }
+
+    .datos-personales dl {
+        grid-template-columns: 1fr;
+    }
+}
